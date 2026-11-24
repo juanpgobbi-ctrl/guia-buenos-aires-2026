@@ -13215,6 +13215,53 @@
    "relaciones": []
   },
   {
+   "id": "finde",
+   "nombre": "Finde (heladería artesanal)",
+   "categoria": "helado",
+   "tipo_texto": "Heladería artesanal",
+   "direccion": "Dr. Emilio Ravignani 1949",
+   "barrio": "Palermo",
+   "zona": "caba",
+   "lat": -34.57991,
+   "lon": -58.43717,
+   "coord_aproximada": false,
+   "origen": "busqueda-propia",
+   "por_que_en_mi_lista": null,
+   "dato_curioso": {
+    "texto": "Heladería artesanal que nació durante la pandemia, en una casona de Palermo. Time Out recomienda el gusto Flat White, con el espíritu de un affogato pero en textura de helado. Hay otro local en Colegiales (Cap. Gral. Ramón Freire 1424).",
+    "fuentes": [
+     {
+      "etiqueta": "Time Out Buenos Aires, mejores heladerías",
+      "url": "https://www.timeout.com/es/buenos-aires/comer-y-beber/mejores-heladerias",
+      "tipo": "prensa"
+     }
+    ],
+    "estado": "fuente_citada"
+   },
+   "horarios": {
+    "estado": "sin_verificar",
+    "texto": null,
+    "fuente": null
+   },
+   "rating": null,
+   "mejor_sucursal": false,
+   "sin_confirmar": false,
+   "notas": "Es la propuesta nueva de la lista de Time Out. No encontré un puntaje de reseñas para citar.",
+   "fuentes": [
+    {
+     "etiqueta": "Time Out Buenos Aires, mejores heladerías",
+     "url": "https://www.timeout.com/es/buenos-aires/comer-y-beber/mejores-heladerias",
+     "tipo": "prensa"
+    },
+    {
+     "etiqueta": "Coordenadas: OpenStreetMap (nodo Finde)",
+     "url": null,
+     "tipo": "guia"
+    }
+   ],
+   "relaciones": []
+  },
+  {
    "id": "fogosa-parrilla-con-terraza",
    "nombre": "Fogosa (parrilla con terraza)",
    "categoria": "parrilla",
@@ -13459,6 +13506,85 @@
      "n": 10,
      "dist_m": null,
      "rol": "parada"
+    }
+   ]
+  },
+  {
+   "id": "gruta",
+   "nombre": "Gruta (heladería artesanal)",
+   "categoria": "helado",
+   "tipo_texto": "Heladería artesanal",
+   "direccion": "Sucre 2356",
+   "barrio": "Belgrano",
+   "zona": "caba",
+   "lat": -34.56369,
+   "lon": -58.45451,
+   "coord_aproximada": false,
+   "origen": "busqueda-propia",
+   "por_que_en_mi_lista": null,
+   "dato_curioso": {
+    "texto": "Heladería familiar de Belgrano con unos 50 gustos. El sambayón es lo más celebrado y preparan almendras caramelizadas todos los días. El año de inicio cambia según la fuente: 1977 (Time Out) o 1976 (El Cronista).",
+    "fuentes": [
+     {
+      "etiqueta": "Time Out Buenos Aires, mejores heladerías",
+      "url": "https://www.timeout.com/es/buenos-aires/comer-y-beber/mejores-heladerias",
+      "tipo": "prensa"
+     },
+     {
+      "etiqueta": "El Cronista, sambayón de CABA",
+      "url": "https://www.cronista.com/clase/gourmet/la-historica-heladeria-portena-que-tiene-el-mejor-sambayon-de-caba-y-le-compite-a-las-grandes-cadenas/",
+      "tipo": "prensa"
+     },
+     {
+      "etiqueta": "Ámbito, las tres heladerías más recomendadas",
+      "url": "https://www.ambito.com/las-tres-heladerias-mas-recomendadas-la-ciudad-buenos-aires-n5668855",
+      "tipo": "prensa"
+     }
+    ],
+    "estado": "fuente_citada"
+   },
+   "horarios": {
+    "estado": "sin_verificar",
+    "texto": null,
+    "fuente": null
+   },
+   "rating": {
+    "valor": 4.7,
+    "fuente": "Resumen de un agregador (tabiji) sobre Google Maps, sin verificar",
+    "fecha": "N/A"
+   },
+   "mejor_sucursal": false,
+   "sin_confirmar": false,
+   "notas": "Aparece en Time Out y en notas de El Cronista y Ámbito, y el sambayón es su sabor de culto.",
+   "fuentes": [
+    {
+     "etiqueta": "Time Out Buenos Aires, mejores heladerías",
+     "url": "https://www.timeout.com/es/buenos-aires/comer-y-beber/mejores-heladerias",
+     "tipo": "prensa"
+    },
+    {
+     "etiqueta": "El Cronista, sambayón de CABA",
+     "url": "https://www.cronista.com/clase/gourmet/la-historica-heladeria-portena-que-tiene-el-mejor-sambayon-de-caba-y-le-compite-a-las-grandes-cadenas/",
+     "tipo": "prensa"
+    },
+    {
+     "etiqueta": "Ámbito, las tres heladerías más recomendadas",
+     "url": "https://www.ambito.com/las-tres-heladerias-mas-recomendadas-la-ciudad-buenos-aires-n5668855",
+     "tipo": "prensa"
+    },
+    {
+     "etiqueta": "Coordenadas: OpenStreetMap (nodo Helados Gruta)",
+     "url": null,
+     "tipo": "guia"
+    }
+   ],
+   "relaciones": [
+    {
+     "ruta": "b",
+     "tipo": "cerca",
+     "n": null,
+     "dist_m": 60,
+     "rol": null
     }
    ]
   },
@@ -17430,6 +17556,75 @@
     }
    ],
    "relaciones": []
+  },
+  {
+   "id": "scannapieco",
+   "nombre": "Scannapieco (heladería)",
+   "categoria": "helado",
+   "tipo_texto": "Heladería artesanal",
+   "direccion": "Av. Álvarez Thomas 10",
+   "barrio": "Chacarita",
+   "zona": "caba",
+   "lat": -34.58322,
+   "lon": -58.44473,
+   "coord_aproximada": false,
+   "origen": "busqueda-propia",
+   "por_que_en_mi_lista": null,
+   "dato_curioso": {
+    "texto": "Heladería de una familia de la Costa Amalfitana. Recomiendan el chocolate de la casa con dulce de leche casero, las castañas, los merengues y el cucurucho bañado. Los años de fundación cambian según la fuente (1915 o 1938): sin verificar. Hay otro local en Paseo La Plaza.",
+    "fuentes": [
+     {
+      "etiqueta": "Time Out Buenos Aires, mejores heladerías",
+      "url": "https://www.timeout.com/es/buenos-aires/comer-y-beber/mejores-heladerias",
+      "tipo": "prensa"
+     },
+     {
+      "etiqueta": "El Cronista, heladería con más de 85 años",
+      "url": "https://www.cronista.com/clase/gourmet/la-legendaria-heladeria-portena-que-abrio-hace-mas-de-85-anos-y-es-de-las-mejores-de-caba",
+      "tipo": "prensa"
+     }
+    ],
+    "estado": "fuente_citada"
+   },
+   "horarios": {
+    "estado": "sin_verificar",
+    "texto": null,
+    "fuente": null
+   },
+   "rating": {
+    "valor": 4.6,
+    "fuente": "Resumen de un agregador (tabiji) sobre Google Maps, sin verificar",
+    "fecha": "N/A"
+   },
+   "mejor_sucursal": false,
+   "sin_confirmar": false,
+   "notas": "Una de las heladerías tradicionales más nombradas de la ciudad; queda sobre Álvarez Thomas, cerca de Chacarita.",
+   "fuentes": [
+    {
+     "etiqueta": "Time Out Buenos Aires, mejores heladerías",
+     "url": "https://www.timeout.com/es/buenos-aires/comer-y-beber/mejores-heladerias",
+     "tipo": "prensa"
+    },
+    {
+     "etiqueta": "El Cronista, heladería con más de 85 años",
+     "url": "https://www.cronista.com/clase/gourmet/la-legendaria-heladeria-portena-que-abrio-hace-mas-de-85-anos-y-es-de-las-mejores-de-caba",
+     "tipo": "prensa"
+    },
+    {
+     "etiqueta": "Coordenadas: Mapbox (dirección con precisión de azotea)",
+     "url": null,
+     "tipo": "guia"
+    }
+   ],
+   "relaciones": [
+    {
+     "ruta": "a",
+     "tipo": "cerca",
+     "n": null,
+     "dist_m": 20,
+     "rol": null
+    }
+   ]
   },
   {
    "id": "shawarma-heba",

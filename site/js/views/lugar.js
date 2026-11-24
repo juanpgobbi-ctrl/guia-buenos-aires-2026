@@ -49,8 +49,10 @@ export async function lugarSheet(id) {
       planBtns.length ? h('div', { class: 'btns' }, planBtns) : null),
     section('Dato curioso', datoBlock(l.dato_curioso)),
     section('Horarios', horarioBadge(l), horario),
-    l.rating ? section('Calificación', h('p', null, `Google Maps: ${fmtRating(l.rating.valor)}`, h('br'),
-      h('span', { class: 'muted small' }, `Del momento en que se armó la lista. Fecha exacta: ${l.rating.fecha.startsWith('N/A') ? 'N/A' : l.rating.fecha}.`))) : null,
+    l.rating ? section('Calificación', h('p', null, `${l.rating.fuente === 'Google Maps' ? 'Google Maps' : 'Reseñas'}: ${fmtRating(l.rating.valor)}`, h('br'),
+      h('span', { class: 'muted small' }, l.rating.fuente === 'Google Maps'
+        ? `Del momento en que se armó la lista. Fecha exacta: ${l.rating.fecha.startsWith('N/A') ? 'N/A' : l.rating.fecha}.`
+        : `${l.rating.fuente}. Fecha exacta: N/A. Confirmalo en Google Maps antes de ir.`))) : null,
     l.sin_confirmar ? h('div', { class: 'note' }, h('b', null, 'Sin confirmar: '), 'la sucursal o la coincidencia de este lugar no está confirmada. Mirá las notas.') : null,
     l.notas && l.origen !== 'lista-mia' ? section('Notas', h('p', null, l.notas)) : null,
     section('De dónde sale', h('p', null, ORIGEN[l.origen].label === 'Mi lista' ? 'Mi lista guardada. ' : ORIGEN[l.origen].label + '. ', fuenteLinks(l.fuentes))));

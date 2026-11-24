@@ -39,7 +39,7 @@ export function lugarRow(l, { rutaId = null, numero = null, dist = null, showPla
       h('div', { class: 'meta' }, meta),
       h('div', { class: 'tags' },
         badgeOrigen(l),
-        l.rating?.valor != null ? h('span', { class: 'badge soft' }, `Google ${fmtRating(l.rating.valor)}`) : null,
+        l.rating?.valor != null ? h('span', { class: 'badge soft' }, `${l.rating.fuente === 'Google Maps' ? 'Google' : 'Reseñas'} ${fmtRating(l.rating.valor)}`) : null,
         plan.enPlan ? h('span', { class: 'badge soft' }, plan.texto) : (showPlan ? h('span', { class: 'badge soft' }, plan.texto) : null),
         d != null ? h('span', { class: 'badge soft' }, icon('pin'), fmtDist(d)) : null)));
   if (!rutaId) return row;

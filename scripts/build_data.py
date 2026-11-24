@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import csv
 import json
+import math
 import re
 import sys
 from pathlib import Path
@@ -16,6 +17,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from lib import categorize, docparse, kml as kmllib  # noqa: E402
 from lib.experiencias import CATEGORIAS as EXP_CATS, EXPERIENCIAS  # noqa: E402
+from lib.extras import HELADERIAS  # noqa: E402
 from lib.privacy import haversine_m, load_denylist, scrub  # noqa: E402
 from lib.textutil import norm, num_es, slug  # noqa: E402
 
@@ -46,6 +48,20 @@ SIN_VERIF = "sin_verificar"
 
 def r5(v: float) -> float:
     return round(v, 5)
+
+
+def proj_xy(lat: float, lon: float) -> tuple[float, float]:
+    """Proyección plana local (metros) para medir distancias cortas en Buenos Aires."""
+    return (lon * 111320 * math.cos(math.radians(-34.6)), lat * 110540)
+
+
+def seg_dist(p, a, b) -> float:
+    ax, ay = a
+    bx, by = b
+    px, py = p
+    dx, dy = bx - ax, by - ay
+    t = 0 if dx == dy == 0 else max(0, min(1, ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy)))
+    return math.hypot(px - ax - t * dx, py - ay - t * dy)
 
 
 def guia_fuente(extra: str = "") -> dict:
@@ -146,6 +162,7 @@ def main() -> int:
         return best if score >= 0.5 else None
 
     rutas, paradas, discrepancias_dist = [], [], []
+    raw_lines: dict[str, list] = {}
     no_verif: list[dict] = []
 
     def add_rel(lid, ruta, tipo, n=None, dist=None, rol=None):
@@ -156,6 +173,7 @@ def main() -> int:
         title, fi = docparse.ficha(sec)
         subs = docparse.subsections(sec)
         kd = kml_all[key]
+        raw_lines[rid] = kd["lines"]
         walk = docparse.walk_order(subs["La caminata en orden"]) if "La caminata en orden" in subs else []
         food = docparse.food_tables(subs.get("Para planear la comida antes de salir", "")) if tipo != "running" and "Para planear la comida antes de salir" in subs else {"parada": [], "cerca": [], "otros": [], "horarios": []}
         qv = docparse.info_blocks(subs.get("Qué ver, parada por parada") or subs.get("Qué vas pasando") or "")
@@ -310,6 +328,35 @@ def main() -> int:
             "trazas": trazas,
             "fuentes": [guia_fuente(), {"etiqueta": "Coordenadas y orden: KML", "url": None, "tipo": "kml"}],
         })
+
+    # ---------- lugares agregados a mano (heladerías recomendadas), con fuente
+    for ex in HELADERIAS:
+        assert ex["id"] not in lugares, ex["id"]
+        d = ex["dato"]
+        lugares[ex["id"]] = {
+            "id": ex["id"], "nombre": ex["nombre"], "categoria": "helado", "tipo_texto": "Heladería artesanal",
+            "direccion": ex["direccion"], "barrio": ex["barrio"], "zona": "caba", "lat": r5(ex["lat"]), "lon": r5(ex["lon"]),
+            "coord_aproximada": False, "origen": "busqueda-propia", "por_que_en_mi_lista": None,
+            "dato_curioso": {"texto": d["texto"], "fuentes": d["fuentes"], "estado": "fuente_citada"},
+            "horarios": {"estado": SIN_VERIF, "texto": None, "fuente": None},
+            "rating": ex["rating"], "mejor_sucursal": False, "sin_confirmar": False,
+            "notas": ex["por_que_probar"],
+            "fuentes": [*d["fuentes"], {"etiqueta": f"Coordenadas: {ex['coord_fuente']}", "url": None, "tipo": "guia"}],
+            "relaciones": [],
+        }
+        # cerca de una ruta caminable si queda a 400 m o menos de la traza original del KML
+        best = None
+        for rid, lines in raw_lines.items():
+            if rid in ("correr", "bici"):
+                continue
+            for ln in lines:
+                pr = [proj_xy(a, b) for a, b in ln["pts"]]
+                me = proj_xy(ex["lat"], ex["lon"])
+                dm = min(seg_dist(me, pr[i], pr[i + 1]) for i in range(len(pr) - 1))
+                if best is None or dm < best[1]:
+                    best = (rid, dm)
+        if best and best[1] <= 400:
+            add_rel(ex["id"], best[0], "cerca", dist=int(round(best[1] / 10.0) * 10))
 
     # ---------- correcciones con fuente (AUDITORIA.md)
     patios_src = [{"etiqueta": "buenosaires.gob.ar, ficha del hotel Patios de San Telmo",
