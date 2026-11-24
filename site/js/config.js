@@ -1,6 +1,7 @@
 // Configuración editable.
-// TODO: pegar acá la URL de tu mapa en Google My Maps (ej. https://www.google.com/maps/d/viewer?mid=...).
-// Mientras esté vacía, la app muestra un aviso visible y no inventa ninguna URL.
+// URL fija de un mapa de Google My Maps (opcional). Se deja vacía a propósito: los mapas tienen
+// datos personales, así que cada persona pega su link en la app y queda solo en su teléfono.
+// Si algún día querés un mapa público, pegá acá su link de lectura (https://www.google.com/maps/d/viewer?mid=...).
 export const MYMAPS_URL = '';
 
 // Mosaico de OpenStreetMap (sin clave). Respetar https://operations.osmfoundation.org/policies/tiles/

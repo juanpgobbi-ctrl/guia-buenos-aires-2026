@@ -50,9 +50,14 @@ Los datos salen de las fuentes originales y se generan con un script. Las fuente
 
 Para cambiar texto o ajustes sin tocar las fuentes se puede editar `site/data.json` a mano, pero el próximo `build_data.py` lo va a sobrescribir.
 
-### URL de My Maps
+### Mapas de My Maps
 
-Hay una variable `MYMAPS_URL` en `site/js/config.js`. Mientras esté vacía, la pestaña Mapa de cada recorrido muestra un aviso visible (TODO) en lugar del botón. Pegá ahí la URL de tu mapa y listo.
+Los mapas de My Maps tienen datos personales, así que **no se publican en el repositorio**. Hay dos formas de usarlos:
+
+- En la pestaña Mapa de cada recorrido (o en Más, "Mis mapas") se pega el link de My Maps; sirve el link de edición o el de lectura. Queda guardado solo en ese teléfono. Mientras falte, la pestaña muestra un aviso TODO visible.
+- En Más, el botón "Copiar link de la guía con mis mapas" arma un link que, al abrirlo, guarda los mapas en el teléfono de quien lo recibe. Conviene mandarlo solo a quien quieras que vea tus mapas, y que los mapas estén compartidos como "cualquiera con el enlace".
+
+`MYMAPS_URL` en `site/js/config.js` queda vacía (sirve para fijar un mapa público, si algún día hace falta).
 
 ## Estructura
 
