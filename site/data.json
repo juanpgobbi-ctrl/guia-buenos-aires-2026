@@ -7519,8 +7519,8 @@
    "lat": -34.6111,
    "lon": -58.4209,
    "es_comida": true,
-   "estrella": false,
-   "lugar_id": "las-violetas-bar-notable",
+   "estrella": true,
+   "lugar_id": "las-violetas",
    "detalle": "Av. Rivadavia 3899. Inaugurado en 1884",
    "dato_curioso": {
     "texto": "Se inauguró el 21 de septiembre de 1884 (Día de la Primavera). Las crónicas cuentan que Carlos Pellegrini llegó en un tranvía especial. Alfonsina Storni era clienta habitual y por sus salones pasaron Roberto Arlt e Irineo Leguisamo. Tiene vitraux franceses y mármoles italianos; en 2017 la votaron mejor Café Notable. Lo clásico: la merienda y los sándwiches de miga.",
@@ -9777,6 +9777,38 @@
    ]
   },
   {
+   "id": "1810-cocina-regional",
+   "nombre": "1810 Cocina Regional",
+   "categoria": "pizza",
+   "tipo_texto": "Locro y empanadas",
+   "direccion": "Julián Álvarez 1998, CABA",
+   "barrio": "Palermo",
+   "zona": "caba",
+   "lat": -34.58941,
+   "lon": -58.41941,
+   "coord_aproximada": true,
+   "origen": "lista-mia",
+   "por_que_en_mi_lista": "Locro y empanadas (de mis notas). Tiene varios locales: SIN CONFIRMAR cuál; ubicación aproximada",
+   "dato_curioso": null,
+   "horarios": {
+    "estado": "sin_verificar",
+    "texto": null,
+    "fuente": null
+   },
+   "rating": null,
+   "mejor_sucursal": false,
+   "sin_confirmar": true,
+   "notas": null,
+   "fuentes": [
+    {
+     "etiqueta": "Mi lista guardada (planilla); rating de Google Maps",
+     "url": null,
+     "tipo": "lista"
+    }
+   ],
+   "relaciones": []
+  },
+  {
    "id": "444-vermu-vino-y-amor",
    "nombre": "444 Vermú, Vino y Amor",
    "categoria": "bar",
@@ -10017,6 +10049,38 @@
    ]
   },
   {
+   "id": "amores-tintos",
+   "nombre": "Amores Tintos",
+   "categoria": "bar",
+   "tipo_texto": "Bar de vinos",
+   "direccion": "Gorriti 4202, CABA",
+   "barrio": "Palermo",
+   "zona": "caba",
+   "lat": -34.59476,
+   "lon": -58.42382,
+   "coord_aproximada": false,
+   "origen": "lista-mia",
+   "por_que_en_mi_lista": "Vino (de mis notas). Recomendación de mis notas",
+   "dato_curioso": null,
+   "horarios": {
+    "estado": "sin_verificar",
+    "texto": null,
+    "fuente": null
+   },
+   "rating": null,
+   "mejor_sucursal": false,
+   "sin_confirmar": false,
+   "notas": null,
+   "fuentes": [
+    {
+     "etiqueta": "Mi lista guardada (planilla); rating de Google Maps",
+     "url": null,
+     "tipo": "lista"
+    }
+   ],
+   "relaciones": []
+  },
+  {
    "id": "antro-cocina-en-cueva",
    "nombre": "Antro (cocina en cueva)",
    "categoria": "otro",
@@ -10080,6 +10144,38 @@
     "fuente": "Google Maps",
     "fecha": "N/A (valor del momento en que se armó la lista)"
    },
+   "mejor_sucursal": false,
+   "sin_confirmar": false,
+   "notas": null,
+   "fuentes": [
+    {
+     "etiqueta": "Mi lista guardada (planilla); rating de Google Maps",
+     "url": null,
+     "tipo": "lista"
+    }
+   ],
+   "relaciones": []
+  },
+  {
+   "id": "aroha-burgers-ba",
+   "nombre": "Aroha Burgers BA",
+   "categoria": "otro",
+   "tipo_texto": "Hamburguesas",
+   "direccion": "José A. Cabrera 4223, CABA",
+   "barrio": "Palermo",
+   "zona": "caba",
+   "lat": -34.59517,
+   "lon": -58.42474,
+   "coord_aproximada": true,
+   "origen": "lista-mia",
+   "por_que_en_mi_lista": "Hamburguesas (de mis notas). Dirección de una sola fuente: verificar; ubicación aproximada",
+   "dato_curioso": null,
+   "horarios": {
+    "estado": "sin_verificar",
+    "texto": null,
+    "fuente": null
+   },
+   "rating": null,
    "mejor_sucursal": false,
    "sin_confirmar": false,
    "notas": null,
@@ -11005,6 +11101,38 @@
    ]
   },
   {
+   "id": "buffala",
+   "nombre": "Búffala",
+   "categoria": "helado",
+   "tipo_texto": "Heladería, leche de búfala",
+   "direccion": "Av. Pueyrredón 2100, CABA",
+   "barrio": "Recoleta",
+   "zona": "caba",
+   "lat": -34.58789,
+   "lon": -58.39827,
+   "coord_aproximada": false,
+   "origen": "lista-mia",
+   "por_que_en_mi_lista": "Helado con leche de búfala (de mis notas). Recomendación de mis notas",
+   "dato_curioso": null,
+   "horarios": {
+    "estado": "sin_verificar",
+    "texto": null,
+    "fuente": null
+   },
+   "rating": null,
+   "mejor_sucursal": false,
+   "sin_confirmar": false,
+   "notas": null,
+   "fuentes": [
+    {
+     "etiqueta": "Mi lista guardada (planilla); rating de Google Maps",
+     "url": null,
+     "tipo": "lista"
+    }
+   ],
+   "relaciones": []
+  },
+  {
    "id": "buller-terraza-con-vista-al-cementerio",
    "nombre": "Buller (terraza con vista al cementerio)",
    "categoria": "otro",
@@ -11020,8 +11148,8 @@
    "dato_curioso": null,
    "horarios": {
     "estado": "sin_verificar",
-    "texto": "Sigue abierto: N/A sin verificar",
-    "fuente": "Guía v6 (sin fuente primaria)"
+    "texto": null,
+    "fuente": null
    },
    "rating": null,
    "mejor_sucursal": false,
@@ -11187,6 +11315,38 @@
      "rol": "parada"
     }
    ]
+  },
+  {
+   "id": "cang-tin",
+   "nombre": "Cang Tin",
+   "categoria": "otro",
+   "tipo_texto": "Comida asiática, vietnamita y tailandesa",
+   "direccion": "Av. Dorrego 2415, CABA",
+   "barrio": "Palermo",
+   "zona": "caba",
+   "lat": -34.57614,
+   "lon": -58.43673,
+   "coord_aproximada": true,
+   "origen": "lista-mia",
+   "por_que_en_mi_lista": "Comida asiática (de mis notas). Ubicación aproximada",
+   "dato_curioso": null,
+   "horarios": {
+    "estado": "sin_verificar",
+    "texto": null,
+    "fuente": null
+   },
+   "rating": null,
+   "mejor_sucursal": false,
+   "sin_confirmar": false,
+   "notas": null,
+   "fuentes": [
+    {
+     "etiqueta": "Mi lista guardada (planilla); rating de Google Maps",
+     "url": null,
+     "tipo": "lista"
+    }
+   ],
+   "relaciones": []
   },
   {
    "id": "cantina-pierino",
@@ -12783,6 +12943,38 @@
    "relaciones": []
   },
   {
+   "id": "el-peron-peron",
+   "nombre": "El Perón Perón",
+   "categoria": "otro",
+   "tipo_texto": "Restaurante temático",
+   "direccion": "Lavalleja 1388, CABA",
+   "barrio": "Palermo",
+   "zona": "caba",
+   "lat": -34.59415,
+   "lon": -58.42474,
+   "coord_aproximada": false,
+   "origen": "lista-mia",
+   "por_que_en_mi_lista": "De mis notas. El barrio figura distinto según la fuente (Palermo o Villa Crespo)",
+   "dato_curioso": null,
+   "horarios": {
+    "estado": "sin_verificar",
+    "texto": null,
+    "fuente": null
+   },
+   "rating": null,
+   "mejor_sucursal": false,
+   "sin_confirmar": false,
+   "notas": null,
+   "fuentes": [
+    {
+     "etiqueta": "Mi lista guardada (planilla); rating de Google Maps",
+     "url": null,
+     "tipo": "lista"
+    }
+   ],
+   "relaciones": []
+  },
+  {
    "id": "el-retono",
    "nombre": "El Retoño",
    "categoria": "cafe",
@@ -12842,6 +13034,38 @@
     "fuente": "Google Maps",
     "fecha": "N/A (valor del momento en que se armó la lista)"
    },
+   "mejor_sucursal": false,
+   "sin_confirmar": false,
+   "notas": null,
+   "fuentes": [
+    {
+     "etiqueta": "Mi lista guardada (planilla); rating de Google Maps",
+     "url": null,
+     "tipo": "lista"
+    }
+   ],
+   "relaciones": []
+  },
+  {
+   "id": "el-secretito",
+   "nombre": "El SecreTito",
+   "categoria": "parrilla",
+   "tipo_texto": "Parrilla",
+   "direccion": "Av. Dorrego 2720, CABA",
+   "barrio": "Palermo",
+   "zona": "caba",
+   "lat": -34.57418,
+   "lon": -58.43281,
+   "coord_aproximada": true,
+   "origen": "lista-mia",
+   "por_que_en_mi_lista": "Parrilla (de mis notas). Conviene reservar; ubicación aproximada",
+   "dato_curioso": null,
+   "horarios": {
+    "estado": "sin_verificar",
+    "texto": "Conviene reservar; ubicación aproximada",
+    "fuente": "Notas de la lista y reseñas de Google (sin fuente primaria)"
+   },
+   "rating": null,
    "mejor_sucursal": false,
    "sin_confirmar": false,
    "notas": null,
@@ -12920,8 +13144,8 @@
    "dato_curioso": null,
    "horarios": {
     "estado": "sin_verificar",
-    "texto": "Tango cena show; reserva: N/A sin verificar",
-    "fuente": "Guía v6 (sin fuente primaria)"
+    "texto": null,
+    "fuente": null
    },
    "rating": null,
    "mejor_sucursal": false,
@@ -13508,6 +13732,38 @@
      "rol": "parada"
     }
    ]
+  },
+  {
+   "id": "gordo-chanta",
+   "nombre": "Gordo Chanta",
+   "categoria": "pizza",
+   "tipo_texto": "Pizzería",
+   "direccion": "Juan Ramírez de Velasco 1200, CABA",
+   "barrio": "Villa Crespo",
+   "zona": "caba",
+   "lat": -34.5922,
+   "lon": -58.44262,
+   "coord_aproximada": false,
+   "origen": "lista-mia",
+   "por_que_en_mi_lista": "Pizza (de mis notas). En el límite entre Chacarita y Villa Crespo",
+   "dato_curioso": null,
+   "horarios": {
+    "estado": "sin_verificar",
+    "texto": null,
+    "fuente": null
+   },
+   "rating": null,
+   "mejor_sucursal": false,
+   "sin_confirmar": false,
+   "notas": null,
+   "fuentes": [
+    {
+     "etiqueta": "Mi lista guardada (planilla); rating de Google Maps",
+     "url": null,
+     "tipo": "lista"
+    }
+   ],
+   "relaciones": []
   },
   {
    "id": "gruta",
@@ -14267,6 +14523,38 @@
    ]
   },
   {
+   "id": "la-cabrera",
+   "nombre": "La Cabrera",
+   "categoria": "parrilla",
+   "tipo_texto": "Parrilla",
+   "direccion": "José A. Cabrera 5099, CABA",
+   "barrio": "Palermo",
+   "zona": "caba",
+   "lat": -34.58911,
+   "lon": -58.43325,
+   "coord_aproximada": true,
+   "origen": "lista-mia",
+   "por_que_en_mi_lista": "Parrilla (de mis notas). Ubicación de La Cabrera Norte, a media cuadra; ubicación aproximada",
+   "dato_curioso": null,
+   "horarios": {
+    "estado": "sin_verificar",
+    "texto": null,
+    "fuente": null
+   },
+   "rating": null,
+   "mejor_sucursal": false,
+   "sin_confirmar": false,
+   "notas": null,
+   "fuentes": [
+    {
+     "etiqueta": "Mi lista guardada (planilla); rating de Google Maps",
+     "url": null,
+     "tipo": "lista"
+    }
+   ],
+   "relaciones": []
+  },
+  {
    "id": "la-catedral-club-tango",
    "nombre": "La Catedral Club (tango)",
    "categoria": "otro",
@@ -14785,18 +15073,18 @@
    ]
   },
   {
-   "id": "las-violetas-bar-notable",
-   "nombre": "Las Violetas (Bar Notable)",
-   "categoria": "bar",
-   "tipo_texto": "Bar Notable",
-   "direccion": "Av. Rivadavia 3899",
-   "barrio": null,
+   "id": "las-violetas",
+   "nombre": "Las Violetas",
+   "categoria": "panaderia",
+   "tipo_texto": "Confitería histórica, Bar Notable",
+   "direccion": "Av. Rivadavia 3899, CABA",
+   "barrio": "Almagro",
    "zona": "caba",
-   "lat": -34.6111,
-   "lon": -58.4209,
+   "lat": -34.61127,
+   "lon": -58.42092,
    "coord_aproximada": false,
-   "origen": "busqueda-propia",
-   "por_que_en_mi_lista": null,
+   "origen": "lista-mia",
+   "por_que_en_mi_lista": "Confitería (de mis notas). Ya es parada 1 del recorrido F",
    "dato_curioso": {
     "texto": "Se inauguró el 21 de septiembre de 1884 (Día de la Primavera). Las crónicas cuentan que Carlos Pellegrini llegó en un tranvía especial. Alfonsina Storni era clienta habitual y por sus salones pasaron Roberto Arlt e Irineo Leguisamo. Tiene vitraux franceses y mármoles italianos; en 2017 la votaron mejor Café Notable. Lo clásico: la merienda y los sándwiches de miga.",
     "fuentes": [
@@ -14826,12 +15114,12 @@
    "rating": null,
    "mejor_sucursal": false,
    "sin_confirmar": false,
-   "notas": "Av. Rivadavia 3899. Inaugurado en 1884",
+   "notas": null,
    "fuentes": [
     {
-     "etiqueta": "Búsqueda propia (Google, prensa), según la guía v6",
+     "etiqueta": "Mi lista guardada (planilla); rating de Google Maps",
      "url": null,
-     "tipo": "guia"
+     "tipo": "lista"
     }
    ],
    "relaciones": [
@@ -16004,8 +16292,8 @@
    "dato_curioso": null,
    "horarios": {
     "estado": "sin_verificar",
-    "texto": "Reserva recomendada: N/A sin verificar",
-    "fuente": "Guía v6 (sin fuente primaria)"
+    "texto": null,
+    "fuente": null
    },
    "rating": null,
    "mejor_sucursal": false,
@@ -17286,6 +17574,38 @@
    ]
   },
   {
+   "id": "rita",
+   "nombre": "Rita",
+   "categoria": "cafe",
+   "tipo_texto": "Café, tostado de chipá",
+   "direccion": "Amenábar 3361, CABA",
+   "barrio": "Núñez",
+   "zona": "caba",
+   "lat": -34.55225,
+   "lon": -58.46839,
+   "coord_aproximada": true,
+   "origen": "lista-mia",
+   "por_que_en_mi_lista": "Café y tostado de chipá (de mis notas). Tiene varias sucursales: SIN CONFIRMAR cuál es la de la recomendación; ubicación aproximada",
+   "dato_curioso": null,
+   "horarios": {
+    "estado": "sin_verificar",
+    "texto": null,
+    "fuente": null
+   },
+   "rating": null,
+   "mejor_sucursal": false,
+   "sin_confirmar": true,
+   "notas": null,
+   "fuentes": [
+    {
+     "etiqueta": "Mi lista guardada (planilla); rating de Google Maps",
+     "url": null,
+     "tipo": "lista"
+    }
+   ],
+   "relaciones": []
+  },
+  {
    "id": "rufus-cafe-de-especialidad",
    "nombre": "Rufus (café de especialidad)",
    "categoria": "cafe",
@@ -17933,6 +18253,38 @@
      "rol": "parada"
     }
    ]
+  },
+  {
+   "id": "tita-la-vedette",
+   "nombre": "Tita la Vedette",
+   "categoria": "otro",
+   "tipo_texto": "Pastas, restaurante vegano",
+   "direccion": "Paz Soldán 4993, CABA",
+   "barrio": "La Paternal",
+   "zona": "caba",
+   "lat": -34.59419,
+   "lon": -58.46861,
+   "coord_aproximada": false,
+   "origen": "lista-mia",
+   "por_que_en_mi_lista": "Pastas (de mis notas). Recomendación de mis notas. Horarios sin verificar",
+   "dato_curioso": null,
+   "horarios": {
+    "estado": "sin_verificar",
+    "texto": null,
+    "fuente": null
+   },
+   "rating": null,
+   "mejor_sucursal": false,
+   "sin_confirmar": false,
+   "notas": null,
+   "fuentes": [
+    {
+     "etiqueta": "Mi lista guardada (planilla); rating de Google Maps",
+     "url": null,
+     "tipo": "lista"
+    }
+   ],
+   "relaciones": []
   },
   {
    "id": "valhalla-bar-vikingo",
@@ -18717,6 +19069,54 @@
    "tipo": "coordenada_aproximada",
    "titulo": "Entre Vías: coordenada aproximada",
    "ref": "entre-vias",
+   "fuente": "Guía v6"
+  },
+  {
+   "tipo": "coordenada_aproximada",
+   "titulo": "El SecreTito: coordenada aproximada",
+   "ref": "el-secretito",
+   "fuente": "Guía v6"
+  },
+  {
+   "tipo": "sucursal_sin_confirmar",
+   "titulo": "Rita: sucursal o coincidencia sin confirmar",
+   "ref": "rita",
+   "fuente": "Mi lista (planilla)"
+  },
+  {
+   "tipo": "coordenada_aproximada",
+   "titulo": "Rita: coordenada aproximada",
+   "ref": "rita",
+   "fuente": "Guía v6"
+  },
+  {
+   "tipo": "coordenada_aproximada",
+   "titulo": "Aroha Burgers BA: coordenada aproximada",
+   "ref": "aroha-burgers-ba",
+   "fuente": "Guía v6"
+  },
+  {
+   "tipo": "coordenada_aproximada",
+   "titulo": "Cang Tin: coordenada aproximada",
+   "ref": "cang-tin",
+   "fuente": "Guía v6"
+  },
+  {
+   "tipo": "sucursal_sin_confirmar",
+   "titulo": "1810 Cocina Regional: sucursal o coincidencia sin confirmar",
+   "ref": "1810-cocina-regional",
+   "fuente": "Mi lista (planilla)"
+  },
+  {
+   "tipo": "coordenada_aproximada",
+   "titulo": "1810 Cocina Regional: coordenada aproximada",
+   "ref": "1810-cocina-regional",
+   "fuente": "Guía v6"
+  },
+  {
+   "tipo": "coordenada_aproximada",
+   "titulo": "La Cabrera: coordenada aproximada",
+   "ref": "la-cabrera",
    "fuente": "Guía v6"
   },
   {

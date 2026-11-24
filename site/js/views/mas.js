@@ -1,6 +1,7 @@
 import { h, icon, copyText } from '../lib/util.js';
 import { MAP_KINDS, getMaps, getTema, myMapsViewerUrl, parseMid, setMap, setTema } from '../lib/store.js';
 import { topbar } from './parts.js';
+import { db } from '../data.js';
 
 function mapasSection() {
   const box = h('div', null);
@@ -50,7 +51,7 @@ export function masView({ query } = {}) {
   const row = (href, titulo, desc, ico) => h('a', { class: 'row', href }, icon(ico), h('div', { class: 'main' }, h('p', { class: 'name' }, titulo), h('div', { class: 'meta' }, desc)));
   return h('div', { 'data-title': 'Más' }, topbar('Más', { back: false }),
     h('ul', { class: 'list' },
-      h('li', null, row('#/lista', 'Mi lista (77)', 'Los lugares guardados, con su lugar en el plan', 'star')),
+      h('li', null, row('#/lista', `Mi lista (${db.lugares.filter((l) => l.origen === 'lista-mia').length})`, 'Los lugares guardados, con su lugar en el plan', 'star')),
       h('li', null, row('#/correr', 'Correr y bici', 'Entrenamiento de 12,7 km y bici de 26 a 42 km', 'run')),
       h('li', null, row('#/noverif', 'Qué no verifiqué', 'Lo que hay que chequear antes de salir', 'alert')),
       h('li', null, row('#/buscar', 'Buscar', 'Lugares, paradas, recorridos y experiencias', 'search'))),

@@ -17,16 +17,19 @@ def test_schema(data, root):
     jsonschema.Draft202012Validator(schema).validate(data)
 
 
-def test_77_lugares_de_la_lista(data):
+def test_los_77_lugares_originales_siguen_en_la_lista(data):
     lista = [l for l in data["lugares"] if l["origen"] == "lista-mia"]
-    assert len(lista) == 77
-    assert len({l["id"] for l in lista}) == 77
-    assert Counter(l["zona"] for l in lista) == {"caba": 48, "gba": 19, "campo": 10}
+    assert len(lista) >= 77
+    assert len({l["id"] for l in lista}) == len(lista)
+    zonas = Counter(l["zona"] for l in lista)
+    assert zonas["caba"] >= 48 and zonas["gba"] == 19 and zonas["campo"] == 10
+    originales = [l for l in lista if l["rating"] and l["rating"]["fuente"] == "Google Maps"]
+    assert len(originales) == 77
 
 
 def test_cada_lugar_de_la_lista_tiene_plan_o_figura_fuera_del_plan(data):
     lista = [l for l in data["lugares"] if l["origen"] == "lista-mia"]
-    assert len([l for l in lista if l["relaciones"]]) == 19
+    assert len([l for l in lista if l["relaciones"]]) >= 19
     for l in lista:
         for r in l["relaciones"]:
             if r["tipo"] == "parada":
@@ -74,7 +77,7 @@ def test_referencias_cruzadas(data):
     for l in data["lugares"]:
         for r in l["relaciones"]:
             assert r["ruta"] in rutas
-        assert l["origen"] != "lista-mia" or l["rating"]["valor"] is not None
+        assert l["rating"] is None or l["rating"]["valor"] is not None
     for e in data["experiencias"]:
         for lid in e["lugares"]:
             assert lid in ids, (e["id"], lid)

@@ -44,6 +44,7 @@ HOME_ROUTES_CLIP = {"a": "stops", "b": "stops", "bici": "radius"}
 CLIP_RADIUS_M = 1500
 ETIQUETAS = {"c": "C+", "correr": "Correr", "bici": "Bici"}
 SIN_VERIF = "sin_verificar"
+MIN_PUBLIC_M = 400  # ningún lugar público a menos de esta distancia del punto de partida
 
 
 def r5(v: float) -> float:
@@ -114,11 +115,15 @@ def main() -> int:
 
     # ---------- lista: 77 lugares
     lugares: dict[str, dict] = {}
+    excluidos_privacidad: list[str] = []
     by_norm: dict[str, str] = {}
     for r in rows:
         nm = r["Nombre"].strip()
         lat = float(r["Latitud"].replace(",", "."))
         lon = float(r["Longitud"].replace(",", "."))
+        if haversine_m(home, (lat, lon)) < MIN_PUBLIC_M:
+            excluidos_privacidad.append(nm)  # queda en la planilla pero no se publica
+            continue
         notas = (r["Notas"] or "").strip()
         reco = (r["Recomendado"] or "").strip().rstrip(".")
         por_que = scrub(reco + (". " + notas if notas else ""))
@@ -130,13 +135,13 @@ def main() -> int:
             "id": lid, "nombre": nm, "categoria": categorize.categoria(r["Tipo"], nm),
             "tipo_texto": r["Tipo"].strip(), "direccion": r["Dirección"].strip(), "barrio": r["Barrio / pueblo"].strip(),
             "zona": zona, "lat": r5(lat), "lon": r5(lon),
-            "coord_aproximada": bool(re.search(r"coordenadas (aproximadas|del viñedo)", txt_coord, re.I)),
+            "coord_aproximada": bool(re.search(r"(coordenadas|ubicaci[oó]n) (aproximadas?|del viñedo)", txt_coord, re.I)),
             "origen": "lista-mia", "por_que_en_mi_lista": por_que,
             "dato_curioso": None,
             "horarios": {"estado": SIN_VERIF, "texto": horario,
                          "fuente": "Notas de la lista y reseñas de Google (sin fuente primaria)" if horario else None},
-            "rating": {"valor": num_es(r["Google"]), "fuente": "Google Maps",
-                       "fecha": "N/A (valor del momento en que se armó la lista)"},
+            "rating": ({"valor": num_es(r["Google"]), "fuente": "Google Maps",
+                        "fecha": "N/A (valor del momento en que se armó la lista)"} if num_es(r["Google"]) else None),
             "mejor_sucursal": (r["Mejor sucursal de la cadena"] or "").strip().startswith("Sí"),
             "sin_confirmar": bool(re.search(r"sin confirmar", por_que or "", re.I)),
             "notas": None,
@@ -144,7 +149,9 @@ def main() -> int:
             "relaciones": [],
         }
         by_norm[norm(nm)] = lid
-    assert len(lugares) == 77, len(lugares)
+    assert len(lugares) >= 77 - 0 and len(rows) >= 77, len(lugares)
+    if excluidos_privacidad:
+        print("Excluidos del sitio por privacidad (a menos de %d m del punto de partida): %s" % (MIN_PUBLIC_M, ", ".join(excluidos_privacidad)))
     lista_pts = {lid: (l["lat"], l["lon"]) for lid, l in lugares.items()}
 
     def find_lista(name: str) -> str | None:
@@ -224,6 +231,11 @@ def main() -> int:
                 dist_traza = int(m.group(1))
             pid = f"{rid}-{n if n is not None else (rol + str(order))}"
             star_lid = None
+            if not p["star"] and p["style"] in ("s", "d") and p["rol"] in ("parada", "inicio", "fin"):
+                cerca = [k for k, v in lista_pts.items() if haversine_m(v, (p["lat"], p["lon"])) <= 40]
+                if cerca:  # ya figura en la lista: se trata como ★
+                    p = {**p, "star": True}
+                    entry_star_forced = True
             if p["star"]:
                 star_lid = min(lista_pts, key=lambda k: haversine_m(lista_pts[k], (p["lat"], p["lon"])))
                 if haversine_m(lista_pts[star_lid], (p["lat"], p["lon"])) > 40:

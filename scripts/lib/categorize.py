@@ -70,6 +70,6 @@ def horarios(*texts: str | None) -> str | None:
             continue
         for s in re.split(r"(?<=[a-záéíóúñ0-9)])\.\s+(?=[A-ZÁÉÍÓÚ0-9])", t):
             s = s.strip().rstrip(".")
-            if s and HOURS_RE.search(s) and s not in out and len(s) < 220:
+            if s and HOURS_RE.search(s) and not re.search(r'sin verificar', s, re.I) and s not in out and len(s) < 220:
                 out.append(s)
     return ". ".join(out) if out else None
