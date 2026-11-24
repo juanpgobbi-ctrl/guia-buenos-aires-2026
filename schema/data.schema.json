@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Guia Buenos Aires 2026: data.json",
+  "type": "object",
+  "required": ["meta", "rutas", "paradas", "lugares", "experiencias", "experiencias_categorias", "categorias", "discrepancias", "no_verificado"],
+  "additionalProperties": false,
+  "$defs": {
+    "fuente": {
+      "type": "object",
+      "required": ["etiqueta", "url", "tipo"],
+      "additionalProperties": false,
+      "properties": {
+        "etiqueta": {"type": "string", "minLength": 1},
+        "url": {"type": ["string", "null"], "pattern": "^https://[^\\s]+$"},
+        "tipo": {"enum": ["oficial", "prensa", "agregador", "guia", "lista", "kml", "dominio_citado"]}
+      }
+    },
+    "dato": {
+      "type": ["object", "null"],
+      "required": ["texto", "fuentes", "estado"],
+      "additionalProperties": false,
+      "properties": {
+        "texto": {"type": "string", "minLength": 3},
+        "fuentes": {"type": "array", "items": {"$ref": "#/$defs/fuente"}},
+        "estado": {"enum": ["fuente_citada", "fuente_oficial", "sin_verificar"]}
+      }
+    },
+    "lat": {"type": "number", "minimum": -35.5, "maximum": -33.0},
+    "lon": {"type": "number", "minimum": -60.0, "maximum": -57.5}
+  },
+  "properties": {
+    "meta": {"type": "object", "required": ["titulo", "version", "nota_ratings", "mymaps_url_pendiente"]},
+    "rutas": {
+      "type": "array", "minItems": 13,
+      "items": {
+        "type": "object",
+        "required": ["id", "etiqueta", "nombre", "tipo", "prioridad", "acceso", "orden", "km", "sale", "termina", "descripcion", "n_paradas", "n_comida", "trazas", "fuentes"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9]+$"},
+          "tipo": {"enum": ["caminata", "running", "bici", "alternativa"]},
+          "prioridad": {"enum": ["estilo_de_vida", "transporte", "turistico", "deporte"]},
+          "acceso": {"enum": ["a_pie", "transporte"]},
+          "km": {"type": ["number", "null"], "minimum": 0},
+          "trazas": {"type": "array", "items": {"type": "object", "required": ["id", "nombre", "puntos"],
+            "properties": {"puntos": {"type": "array", "minItems": 2, "items": {"type": "array", "prefixItems": [{"$ref": "#/$defs/lat"}, {"$ref": "#/$defs/lon"}], "minItems": 2, "maxItems": 2}}}}},
+          "fuentes": {"type": "array", "items": {"$ref": "#/$defs/fuente"}}
+        }
+      }
+    },
+    "paradas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "ruta", "n", "rol", "orden", "nombre", "lat", "lon", "es_comida", "estrella", "lugar_id", "dato_curioso"],
+        "properties": {
+          "rol": {"enum": ["parada", "inicio", "fin", "opcional", "punto"]},
+          "n": {"type": ["integer", "null"], "minimum": 1},
+          "lat": {"$ref": "#/$defs/lat"}, "lon": {"$ref": "#/$defs/lon"},
+          "es_comida": {"type": "boolean"}, "estrella": {"type": "boolean"},
+          "lugar_id": {"type": ["string", "null"]},
+          "dato_curioso": {"$ref": "#/$defs/dato"}
+        }
+      }
+    },
+    "lugares": {
+      "type": "array", "minItems": 77,
+      "items": {
+        "type": "object",
+        "required": ["id", "nombre", "categoria", "direccion", "barrio", "zona", "lat", "lon", "origen", "por_que_en_mi_lista", "dato_curioso", "horarios", "rating", "fuentes", "relaciones"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "zona": {"enum": ["caba", "gba", "campo"]},
+          "origen": {"enum": ["lista-mia", "mapa-oficial", "busqueda-propia"]},
+          "categoria": {"enum": ["parrilla", "bodegon", "cafe", "panaderia", "helado", "bar", "pizza", "otro"]},
+          "lat": {"$ref": "#/$defs/lat"}, "lon": {"$ref": "#/$defs/lon"},
+          "dato_curioso": {"$ref": "#/$defs/dato"},
+          "horarios": {"type": "object", "required": ["estado", "texto", "fuente"],
+            "properties": {"estado": {"enum": ["sin_verificar", "verificado"]}}},
+          "rating": {"type": ["object", "null"], "required": ["valor", "fuente", "fecha"],
+            "properties": {"valor": {"type": ["number", "null"], "minimum": 1, "maximum": 5}}},
+          "fuentes": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/fuente"}},
+          "relaciones": {"type": "array", "items": {"type": "object", "required": ["ruta", "tipo"],
+            "properties": {"tipo": {"enum": ["parada", "cerca", "opcional", "inicio_fin"]}}}}
+        }
+      }
+    },
+    "experiencias": {
+      "type": "array", "minItems": 1,
+      "items": {"type": "object",
+        "required": ["id", "titulo", "categoria", "resumen", "duracion_texto", "reserva", "se_acopla", "lugares", "fuentes", "estado", "nota"],
+        "properties": {
+          "categoria": {"enum": ["noche", "con_reserva", "medio_dia", "dia_completo"]},
+          "reserva": {"enum": ["si", "opcional", "no", "sin_verificar"]},
+          "estado": {"enum": ["sin_verificar", "verificado"]},
+          "lugares": {"type": "array", "items": {"type": "string"}},
+          "fuentes": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/fuente"}}
+        }}
+    },
+    "experiencias_categorias": {"type": "array"},
+    "categorias": {"type": "array"},
+    "discrepancias": {"type": "array", "items": {"type": "object", "required": ["id", "tema", "en_la_guia", "hallazgo", "decision", "estado", "fuentes"],
+      "properties": {"estado": {"enum": ["resuelto_con_fuente", "parcial", "abierto"]}}}},
+    "no_verificado": {"type": "array", "items": {"type": "object", "required": ["tipo", "titulo", "fuente"]}}
+  }
+}

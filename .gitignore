@@ -1,0 +1,9 @@
+fuentes/
+*.kml
+*.csv
+node_modules/
+.env
+capturas/
+_lh/
+__pycache__/
+.pytest_cache/
