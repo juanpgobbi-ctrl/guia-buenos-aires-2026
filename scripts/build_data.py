@@ -17,7 +17,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from lib import categorize, docparse, kml as kmllib  # noqa: E402
 from lib.experiencias import CATEGORIAS as EXP_CATS, EXPERIENCIAS  # noqa: E402
-from lib.extras import HELADERIAS  # noqa: E402
+from lib.extras import HELADERIAS, RECOMENDADOS, lugar_recomendado  # noqa: E402
 from lib.privacy import haversine_m, load_denylist, scrub  # noqa: E402
 from lib.textutil import norm, num_es, slug  # noqa: E402
 
@@ -369,6 +369,26 @@ def main() -> int:
                     best = (rid, dm)
         if best and best[1] <= 400:
             add_rel(ex["id"], best[0], "cerca", dist=int(round(best[1] / 10.0) * 10))
+
+    # ---------- recomendaciones nuevas: la planilla trae nombre y coordenadas; acá se suman los datos con fuente
+    for ex in RECOMENDADOS:
+        lid = slug(ex["nombre"])
+        if lid not in lugares:
+            print(f"AVISO: {ex['nombre']} no está en la planilla; agregarlo a lista_restaurantes.csv")
+            continue
+        lugares[lid] = lugar_recomendado(ex, lid)
+        best = None
+        for rid, lines in raw_lines.items():
+            if rid in ("correr", "bici"):
+                continue
+            for ln in lines:
+                pr = [proj_xy(a, b) for a, b in ln["pts"]]
+                me = proj_xy(ex["lat"], ex["lon"])
+                dm = min(seg_dist(me, pr[i], pr[i + 1]) for i in range(len(pr) - 1))
+                if best is None or dm < best[1]:
+                    best = (rid, dm)
+        if best and best[1] <= 400:
+            add_rel(lid, best[0], "cerca", dist=int(round(best[1] / 10.0) * 10) or 10)
 
     # ---------- correcciones con fuente (AUDITORIA.md)
     patios_src = [{"etiqueta": "buenosaires.gob.ar, ficha del hotel Patios de San Telmo",

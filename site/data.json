@@ -11173,6 +11173,63 @@
    ]
   },
   {
+   "id": "burdo",
+   "nombre": "Burdo",
+   "categoria": "otro",
+   "tipo_texto": "Restaurante en casa histórica",
+   "direccion": "Delgado 1199, CABA",
+   "barrio": "Colegiales",
+   "zona": "caba",
+   "lat": -34.57698,
+   "lon": -58.4585,
+   "coord_aproximada": false,
+   "origen": "lista-mia",
+   "por_que_en_mi_lista": "Recomendación que me pasaron (nov 2026).",
+   "dato_curioso": {
+    "texto": "Restaurante en una casa histórica de Colegiales. Infogastronómica destaca el ojo de bife, los buñuelos y un pan relleno de queso fundido; Bloomberg Línea coincide en la dirección. Instagram: @burdo.resto.",
+    "fuentes": [
+     {
+      "etiqueta": "Infogastronómica, nuevo restaurante en Colegiales",
+      "url": "https://www.infogastronomica.com.ar/en-colegiales-nuevo-restaurante-en-una-casa-historica-desde-ojo-de-bife-y-bunuelos-hasta-un-irresistible-pan-relleno-de-queso-fundido/",
+      "tipo": "prensa"
+     },
+     {
+      "etiqueta": "Bloomberg Línea, dónde comer en Buenos Aires",
+      "url": "https://www.bloomberglinea.com/estilo-de-vida/donde-comer-en-buenos-aires-cinco-restaurantes-imprescindibles/",
+      "tipo": "prensa"
+     }
+    ],
+    "estado": "fuente_citada"
+   },
+   "horarios": {
+    "estado": "sin_verificar",
+    "texto": "Mar a sáb desde las 19:30 según Infogastronómica (nota anterior, sin confirmar hoy)",
+    "fuente": "Fuente citada arriba (sin verificar con el local)"
+   },
+   "rating": null,
+   "mejor_sucursal": false,
+   "sin_confirmar": false,
+   "notas": null,
+   "fuentes": [
+    {
+     "etiqueta": "Mi lista guardada (planilla)",
+     "url": null,
+     "tipo": "lista"
+    },
+    {
+     "etiqueta": "Infogastronómica, nuevo restaurante en Colegiales",
+     "url": "https://www.infogastronomica.com.ar/en-colegiales-nuevo-restaurante-en-una-casa-historica-desde-ojo-de-bife-y-bunuelos-hasta-un-irresistible-pan-relleno-de-queso-fundido/",
+     "tipo": "prensa"
+    },
+    {
+     "etiqueta": "Bloomberg Línea, dónde comer en Buenos Aires",
+     "url": "https://www.bloomberglinea.com/estilo-de-vida/donde-comer-en-buenos-aires-cinco-restaurantes-imprescindibles/",
+     "tipo": "prensa"
+    }
+   ],
+   "relaciones": []
+  },
+  {
    "id": "cadore-gelato-artigianale",
    "nombre": "Cadore Gelato Artigianale",
    "categoria": "helado",
@@ -11615,6 +11672,81 @@
      "n": 10,
      "dist_m": null,
      "rol": "parada"
+    }
+   ]
+  },
+  {
+   "id": "catalino",
+   "nombre": "Catalino",
+   "categoria": "otro",
+   "tipo_texto": "Restaurante de cocina de autor",
+   "direccion": "Maure 3126, CABA",
+   "barrio": "Colegiales",
+   "zona": "caba",
+   "lat": -34.57814,
+   "lon": -58.44722,
+   "coord_aproximada": false,
+   "origen": "lista-mia",
+   "por_que_en_mi_lista": "Recomendación que me pasaron (nov 2026). SIN CONFIRMAR la dirección: Maure 3126 sale de un solo listado (Sluurpy); otras fuentes solo confirman el barrio.",
+   "dato_curioso": {
+    "texto": "Empezó como puerta cerrada, lo llevan dos hermanas y hoy abre el portón del patio a la calle (Thatch y Perfil). No confirmé si sigue abierto ni su horario.",
+    "fuentes": [
+     {
+      "etiqueta": "Thatch, Catalino",
+      "url": "https://thatch.co/places/142964/catalino",
+      "tipo": "agregador"
+     },
+     {
+      "etiqueta": "Perfil, Catalino",
+      "url": "https://noticias.perfil.com/noticias/restaurante/catalino.phtml",
+      "tipo": "prensa"
+     },
+     {
+      "etiqueta": "Sluurpy, Catalino (dirección)",
+      "url": "https://www.sluurpy.fr/buenos-aires/restaurant/2283567/catalino-restaurant",
+      "tipo": "agregador"
+     }
+    ],
+    "estado": "fuente_citada"
+   },
+   "horarios": {
+    "estado": "sin_verificar",
+    "texto": null,
+    "fuente": null
+   },
+   "rating": null,
+   "mejor_sucursal": false,
+   "sin_confirmar": true,
+   "notas": null,
+   "fuentes": [
+    {
+     "etiqueta": "Mi lista guardada (planilla)",
+     "url": null,
+     "tipo": "lista"
+    },
+    {
+     "etiqueta": "Thatch, Catalino",
+     "url": "https://thatch.co/places/142964/catalino",
+     "tipo": "agregador"
+    },
+    {
+     "etiqueta": "Perfil, Catalino",
+     "url": "https://noticias.perfil.com/noticias/restaurante/catalino.phtml",
+     "tipo": "prensa"
+    },
+    {
+     "etiqueta": "Sluurpy, Catalino (dirección)",
+     "url": "https://www.sluurpy.fr/buenos-aires/restaurant/2283567/catalino-restaurant",
+     "tipo": "agregador"
+    }
+   ],
+   "relaciones": [
+    {
+     "ruta": "a",
+     "tipo": "cerca",
+     "n": null,
+     "dist_m": 320,
+     "rol": null
     }
    ]
   },
@@ -13526,6 +13658,61 @@
    ]
   },
   {
+   "id": "frank-s",
+   "nombre": "Frank's",
+   "categoria": "bar",
+   "tipo_texto": "Bar speakeasy, cócteles",
+   "direccion": "Arévalo 1445, CABA",
+   "barrio": "Palermo Hollywood",
+   "zona": "caba",
+   "lat": -34.58322,
+   "lon": -58.44304,
+   "coord_aproximada": true,
+   "origen": "lista-mia",
+   "por_que_en_mi_lista": "Recomendación que me pasaron (nov 2026). Dirección: Arévalo 1445 según la mayoría de las fuentes; un listado dice 1443.",
+   "dato_curioso": {
+    "texto": "Uno de los primeros speakeasy porteños: según Turismo de la Ciudad, se entra con una clave que cambia cada semana y se da como pista en redes. Una reseña lo ubica en el puesto 36 de The World's 50 Best Bars de 2012 (sin verificar).",
+    "fuentes": [
+     {
+      "etiqueta": "Turismo Ciudad de Buenos Aires, Frank's",
+      "url": "https://turismo.buenosaires.gob.ar/es/otros-establecimientos/frank%C2%B4s",
+      "tipo": "oficial"
+     }
+    ],
+    "estado": "fuente_citada"
+   },
+   "horarios": {
+    "estado": "sin_verificar",
+    "texto": "Desde las 20 h según una guía japonesa (shift.jp.org); sin fuente primaria",
+    "fuente": "Fuente citada arriba (sin verificar con el local)"
+   },
+   "rating": null,
+   "mejor_sucursal": false,
+   "sin_confirmar": false,
+   "notas": null,
+   "fuentes": [
+    {
+     "etiqueta": "Mi lista guardada (planilla)",
+     "url": null,
+     "tipo": "lista"
+    },
+    {
+     "etiqueta": "Turismo Ciudad de Buenos Aires, Frank's",
+     "url": "https://turismo.buenosaires.gob.ar/es/otros-establecimientos/frank%C2%B4s",
+     "tipo": "oficial"
+    }
+   ],
+   "relaciones": [
+    {
+     "ruta": "a",
+     "tipo": "cerca",
+     "n": null,
+     "dist_m": 120,
+     "rol": null
+    }
+   ]
+  },
+  {
    "id": "fruto-cafe",
    "nombre": "Fruto Café",
    "categoria": "panaderia",
@@ -14991,6 +15178,63 @@
      "rol": "parada"
     }
    ]
+  },
+  {
+   "id": "ladobueno-colegiales",
+   "nombre": "Ladobueno (Colegiales)",
+   "categoria": "helado",
+   "tipo_texto": "Heladería y pastelería",
+   "direccion": "Av. Jorge Newbery y Ciudad de la Paz, CABA (esquina; número sin verificar)",
+   "barrio": "Colegiales",
+   "zona": "caba",
+   "lat": -34.5742,
+   "lon": -58.44283,
+   "coord_aproximada": true,
+   "origen": "lista-mia",
+   "por_que_en_mi_lista": "Recomendación que me pasaron (nov 2026). Es una cadena: elegí la sucursal de Colegiales por cercanía al corredor Newbery. Coordenada aproximada (punto sobre la calle, no sobre el local).",
+   "dato_curioso": {
+    "texto": "Cadena de helados y pastelería porteña (el nombre juega con \"helado bueno\"). Sucursal de Colegiales en la esquina de Jorge Newbery y Ciudad de la Paz, con mesas adentro y en la vereda. Otras: Villa del Parque (Navarro 3190), Villa Urquiza (Av. Congreso 5249) y Almagro (Muñiz 100). Las reseñas son mixtas: sabores bien valorados, precio y atención criticados.",
+    "fuentes": [
+     {
+      "etiqueta": "Buenos Aires Connect, Ladobueno",
+      "url": "https://buenosairesconnect.com/ladobueno-cafe-villadelparque/",
+      "tipo": "prensa"
+     },
+     {
+      "etiqueta": "Tripadvisor, Ladobueno Colegiales",
+      "url": "https://www.tripadvisor.com/Restaurant_Review-g312741-d3194802-Reviews-LadobuenO-Buenos_Aires_Capital_Federal_District.html",
+      "tipo": "agregador"
+     }
+    ],
+    "estado": "fuente_citada"
+   },
+   "horarios": {
+    "estado": "sin_verificar",
+    "texto": null,
+    "fuente": null
+   },
+   "rating": null,
+   "mejor_sucursal": false,
+   "sin_confirmar": false,
+   "notas": null,
+   "fuentes": [
+    {
+     "etiqueta": "Mi lista guardada (planilla)",
+     "url": null,
+     "tipo": "lista"
+    },
+    {
+     "etiqueta": "Buenos Aires Connect, Ladobueno",
+     "url": "https://buenosairesconnect.com/ladobueno-cafe-villadelparque/",
+     "tipo": "prensa"
+    },
+    {
+     "etiqueta": "Tripadvisor, Ladobueno Colegiales",
+     "url": "https://www.tripadvisor.com/Restaurant_Review-g312741-d3194802-Reviews-LadobuenO-Buenos_Aires_Capital_Federal_District.html",
+     "tipo": "agregador"
+    }
+   ],
+   "relaciones": []
   },
   {
    "id": "laganini-jazz-bar",
@@ -16505,6 +16749,63 @@
    "relaciones": []
   },
   {
+   "id": "mn-santa-ines",
+   "nombre": "MN Santa Inés",
+   "categoria": "otro",
+   "tipo_texto": "Cocina fusión contemporánea (Bib Gourmand)",
+   "direccion": "Ávalos 360, CABA",
+   "barrio": "La Paternal",
+   "zona": "caba",
+   "lat": -34.59297,
+   "lon": -58.4679,
+   "coord_aproximada": false,
+   "origen": "lista-mia",
+   "por_que_en_mi_lista": "Recomendación que me pasaron (nov 2026). Reservar directamente con el restaurante.",
+   "dato_curioso": {
+    "texto": "Bib Gourmand de la Guía Michelin (buena relación calidad-precio). Queda en \"la isla\" de La Paternal, rodeada en parte por las vías del tren y el cementerio de Chacarita. Atiende solo al mediodía.",
+    "fuentes": [
+     {
+      "etiqueta": "Guía Michelin, MN Santa Inés",
+      "url": "https://guide.michelin.com/en/ciudad-autonoma-de-buenos-aires/buenos-aires_777009/restaurant/mn-santa-ines",
+      "tipo": "oficial"
+     },
+     {
+      "etiqueta": "Ámbito, una joya oculta en La Paternal",
+      "url": "https://www.ambito.com/uruguay/mn-santa-ines-una-joya-oculta-la-paternal-saborear-la-buenos-aires-mas-autentica-n6198332",
+      "tipo": "prensa"
+     }
+    ],
+    "estado": "fuente_citada"
+   },
+   "horarios": {
+    "estado": "sin_verificar",
+    "texto": "Mar a vie 12:30-15:00; sáb y dom hasta 15:30; lunes cerrado (Michelin; confirmar antes de ir)",
+    "fuente": "Fuente citada arriba (sin verificar con el local)"
+   },
+   "rating": null,
+   "mejor_sucursal": false,
+   "sin_confirmar": false,
+   "notas": null,
+   "fuentes": [
+    {
+     "etiqueta": "Mi lista guardada (planilla)",
+     "url": null,
+     "tipo": "lista"
+    },
+    {
+     "etiqueta": "Guía Michelin, MN Santa Inés",
+     "url": "https://guide.michelin.com/en/ciudad-autonoma-de-buenos-aires/buenos-aires_777009/restaurant/mn-santa-ines",
+     "tipo": "oficial"
+    },
+    {
+     "etiqueta": "Ámbito, una joya oculta en La Paternal",
+     "url": "https://www.ambito.com/uruguay/mn-santa-ines-una-joya-oculta-la-paternal-saborear-la-buenos-aires-mas-autentica-n6198332",
+     "tipo": "prensa"
+    }
+   ],
+   "relaciones": []
+  },
+  {
    "id": "molino-norteno",
    "nombre": "Molino Norteño",
    "categoria": "pizza",
@@ -16664,6 +16965,71 @@
      "tipo": "cerca",
      "n": null,
      "dist_m": 269,
+     "rol": null
+    }
+   ]
+  },
+  {
+   "id": "mutsuhito-omakase",
+   "nombre": "Mutsuhito Omakase",
+   "categoria": "otro",
+   "tipo_texto": "Omakase japonés (speakeasy)",
+   "direccion": "Honduras 5908, CABA",
+   "barrio": "Palermo Hollywood",
+   "zona": "caba",
+   "lat": -34.58168,
+   "lon": -58.43945,
+   "coord_aproximada": true,
+   "origen": "lista-mia",
+   "por_que_en_mi_lista": "Recomendación que me pasaron (nov 2026). Dirección: Honduras 5908 según dos fuentes (Saltshaker y una más); El Cronista lo ubica en el 5902, junto a Emperador Meiji (probablemente el mismo edificio). Confirmar el número al reservar.",
+   "dato_curioso": {
+    "texto": "Barra de sushi omakase estilo speakeasy, en el piso superior del edificio. Se entra con un código individual que llega al reservar (Infogastronómica; Saltshaker da la misma descripción).",
+    "fuentes": [
+     {
+      "etiqueta": "Infogastronómica, restaurante japonés de Palermo con contraseña",
+      "url": "https://www.infogastronomica.com.ar/como-es-el-exclusivo-restaurante-japones-de-palermo-al-que-se-entra-solo-con-contrasena-y-tiene-17-pasos/",
+      "tipo": "prensa"
+     },
+     {
+      "etiqueta": "El Cronista, restaurantes omakase",
+      "url": "https://www.cronista.com/clase/gourmet/los-restaurantes-omakase-se-expanden-9-que-se-destacan-en-buenos-aires-y-alrededores/",
+      "tipo": "prensa"
+     }
+    ],
+    "estado": "fuente_citada"
+   },
+   "horarios": {
+    "estado": "sin_verificar",
+    "texto": null,
+    "fuente": null
+   },
+   "rating": null,
+   "mejor_sucursal": false,
+   "sin_confirmar": false,
+   "notas": null,
+   "fuentes": [
+    {
+     "etiqueta": "Mi lista guardada (planilla)",
+     "url": null,
+     "tipo": "lista"
+    },
+    {
+     "etiqueta": "Infogastronómica, restaurante japonés de Palermo con contraseña",
+     "url": "https://www.infogastronomica.com.ar/como-es-el-exclusivo-restaurante-japones-de-palermo-al-que-se-entra-solo-con-contrasena-y-tiene-17-pasos/",
+     "tipo": "prensa"
+    },
+    {
+     "etiqueta": "El Cronista, restaurantes omakase",
+     "url": "https://www.cronista.com/clase/gourmet/los-restaurantes-omakase-se-expanden-9-que-se-destacan-en-buenos-aires-y-alrededores/",
+     "tipo": "prensa"
+    }
+   ],
+   "relaciones": [
+    {
+     "ruta": "a",
+     "tipo": "cerca",
+     "n": null,
+     "dist_m": 360,
      "rol": null
     }
    ]
